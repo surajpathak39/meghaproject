@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
+import conf from "../conf/conf";
 
 export default function RTE({ name, control, label, defaultValue = "" }) {
   return (
@@ -12,7 +13,7 @@ export default function RTE({ name, control, label, defaultValue = "" }) {
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
-            apiKey="qaznatix8d1kd4eso53xos4xqxxg70lj82xshu2gikz3y1me"
+            apiKey={conf.tinyMiceAPIkey}
             initialValue={defaultValue}
             init={{
               initialValue: defaultValue,
